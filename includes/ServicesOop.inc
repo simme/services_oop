@@ -137,7 +137,7 @@ class ServicesOop {
     // Get doc info for arguments
     $matches = array();
     $argdoc = array();
-    if (preg_match_all('/\@param ([a-z]+) \$([a-z_]+) (\[.*\])/i', $doc, $matches)) {
+    if (preg_match_all('/\@param\s+([a-z]+)\s+\$([a-z_]+)\s+(\[.*\])/i', $doc, $matches)) {
       for ($i = 0; $i<count($matches[1]); $i++) {
         $source = json_decode($matches[3][$i]);
         if (count($source)===1) {
