@@ -21,14 +21,14 @@ You do not need to worry about performance, this stuff is cached pretty hard.
 Annotations
 -----------
 Annotations are what makes services_oop work. An annotation is basically a property written in a comment prefixed with an at sign. It can look like this:
-  /**
-   * Class defining the resource
-   *
-   * @Action(name='occasions', controller='retrieveOccasions')
-   */
-  class OccasionResource {
-    ...
-  }
+   /**
+    * Class defining the resource
+    *
+    * @Action(name='occasions', controller='retrieveOccasions')
+    */
+   class OccasionResource {
+     ...
+   }
 ´@Action´ is one of the available class annotations and describes an action your resource can take. Read more about ´@Action´ below
 
 Resource declaration
