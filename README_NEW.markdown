@@ -21,15 +21,15 @@ You do not need to worry about performance, this stuff is cached pretty hard.
 Annotations
 -----------
 Annotations are what makes services_oop work. An annotation is basically a property written in a comment prefixed with an at sign. It can look like this:
-   /**
-    * Class defining the resource
-    *
-    * @Action(name='occasions', controller='retrieveOccasions')
-    */
-   class OccasionResource {
+    /**
+     * Class defining the resource
+     *
+     * @Action(name='occasions', controller='retrieveOccasions')
+     */
+    class OccasionResource {
      ...
-   }
-´@Action´ is one of the available class annotations and describes an action your resource can take. Read more about ´@Action´ below
+    }
+`@Action` is one of the available class annotations and describes an action your resource can take. Read more about `@Action` below
 
 Resource declaration
 --------------------
@@ -45,8 +45,8 @@ A relation ship is defined on the resource that means it should be defined in th
 
 The definition looks like this
    @Relationship(name='a_name', controller='method')
-* ´name´ is used to map the controller method to an URI.
-* ´controller´ is the name of the callback method.
+* `name` is used to map the controller method to an URI.
+* `controller` is the name of the callback method.
 
 #### Accessing a Relationship ####
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
@@ -62,8 +62,8 @@ This type of actions are performed directly on the resource type, not an individ
 #### Defining an Action ####
 Just like the relationship annotation, the action is defined on the resource itself and it looks like this:
    @Action(name='a_name', controller='method')
-* ´name´ is used to map the controller method to an URI.
-* ´controller´ is the name of the callback method.
+* `name` is used to map the controller method to an URI.
+* `controller` is the name of the callback method.
 
 #### Accessing an Action ####
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
@@ -77,8 +77,8 @@ Practical uses may include publishing a specific node or perhaps getting the nam
 #### Defining a Targeted Action ####
 Also defined on the class, written like this:
    @TargetedAction(name='a_name', controller='method')
-* ´name´ is used to map the controller method to an URI.
-* ´controller´ is the name of the callback method.
+* `name` is used to map the controller method to an URI.
+* `controller` is the name of the callback method.
 
 #### Accessing a Targeted Action ####
 A targeted action is accessed the same way as a relationship.
