@@ -44,7 +44,7 @@ It's considered good practice to only return an index, not a list of complete ob
 A relation ship is defined on the resource that means it should be defined in the doc comment for the class.
 
 The definition looks like this
-   @Relationship(name='a_name', controller='method')
+    @Relationship(name='a_name', controller='method')
 
    *  `name` is used to map the controller method to an URI.
    *  `controller` is the name of the callback method.
@@ -62,9 +62,10 @@ This type of actions are performed directly on the resource type, not an individ
 
 #### Defining an Action ####
 Just like the relationship annotation, the action is defined on the resource itself and it looks like this:
-   @Action(name='a_name', controller='method')
-* `name` is used to map the controller method to an URI.
-* `controller` is the name of the callback method.
+    @Action(name='a_name', controller='method')
+
+   *  `name` is used to map the controller method to an URI.
+   *  `controller` is the name of the callback method.
 
 #### Accessing an Action ####
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
@@ -77,9 +78,10 @@ Practical uses may include publishing a specific node or perhaps getting the nam
 
 #### Defining a Targeted Action ####
 Also defined on the class, written like this:
-   @TargetedAction(name='a_name', controller='method')
-* `name` is used to map the controller method to an URI.
-* `controller` is the name of the callback method.
+    @TargetedAction(name='a_name', controller='method')
+
+   *  `name` is used to map the controller method to an URI.
+   *  `controller` is the name of the callback method.
 
 #### Accessing a Targeted Action ####
 A targeted action is accessed the same way as a relationship.
