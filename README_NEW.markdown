@@ -45,8 +45,9 @@ A relation ship is defined on the resource that means it should be defined in th
 
 The definition looks like this
    @Relationship(name='a_name', controller='method')
-* `name` is used to map the controller method to an URI.
-* `controller` is the name of the callback method.
+
+   *  `name` is used to map the controller method to an URI.
+   *  `controller` is the name of the callback method.
 
 #### Accessing a Relationship ####
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
