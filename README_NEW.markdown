@@ -51,7 +51,7 @@ The definition looks like this
 
 #### Accessing a Relationship ####
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
-   endpoint/resource/id/nameOfRelationship
+    endpoint/resource/id/nameOfRelationship
 
 ### Action ###
 An (untargeted) action is a way of providing an API for performing other actions than *CRUD* and *index* on a resource.
@@ -69,7 +69,7 @@ Just like the relationship annotation, the action is defined on the resource its
 
 #### Accessing an Action ####
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
-   endpoint/resource/nameOfRelationship
+    endpoint/resource/nameOfRelationship
 
 ### Targeted Actions ###
 The last of the resource wide annotations is the targeted action.
@@ -87,4 +87,4 @@ Also defined on the class, written like this:
 A targeted action is accessed the same way as a relationship.
 
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
-   endpoint/resource/id/nameOfTargetedAction
+    endpoint/resource/id/nameOfTargetedAction
