@@ -33,7 +33,7 @@ Annotations are what makes services_oop work. An annotation is basically a prope
 
 Resource declaration
 --------------------
-The resource class itself can have three different annotations; *Relationship*, *Action* and *TargetedAction*
+The resource class itself can have three different annotations; *Relationship*, *Action* and *TargetedAction* (there's actually one more provided by REST Server. I'll talk about that one briefly below).
 
 ### Relationship ###
 Relationships let you specify a method that returns an *index* of related objects. Any easy to understand example could be getting all comments ID's for a specific node.
@@ -70,7 +70,7 @@ If you're using the _REST server_ you would access this relationship by performi
    endpoint/resource/nameOfRelationship
 
 ### Targeted Actions ###
-The last of the resource wide annotations (there's actually one more provided by REST Server. I'll talk about that one briefly below) is the targeted action.
+The last of the resource wide annotations is the targeted action.
 
 Practical uses may include publishing a specific node or perhaps getting the name of a nodes author.
 
