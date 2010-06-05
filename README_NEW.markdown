@@ -2,7 +2,7 @@ services_oop
 ============
 Allows declarative definition of resource-based [services](http://drupal.org/project/Services) through class declarations.
 
-## *THIS IS A WORK IN PROGRESS* ##
+## *THIS DOCUMENT IS A WORK IN PROGRESS* ##
 
 Defining a resource
 -------------------
