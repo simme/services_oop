@@ -99,6 +99,7 @@ Your server probably isn't magic and thus it can't automatically figure what to 
 A `@param` is a method annotation that defines what arguments your resource callback takes. A method can have several `@param`s and they need to be specified in the same order as the function arguments they map against.
 
 `@param` itself takes a few arguments:
+
    *  type - the data type
    *  name - name of the argument
    *  source - where to get the data from, can be *path*, *param* or *data*.
