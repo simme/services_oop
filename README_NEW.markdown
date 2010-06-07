@@ -31,7 +31,7 @@ Annotations are what makes services_oop work. An annotation is basically a prope
     }
 `@Action` is one of the available class annotations and describes an action your resource can take. Read more about `@Action` below
 
-Resource declaration
+Resource Declaration
 --------------------
 The resource class itself can have three different annotations; *Relationship*, *Action* and *TargetedAction* (there's actually one more provided by REST Server. I'll talk about that one briefly below).
 
@@ -88,3 +88,67 @@ A targeted action is accessed the same way as a relationship.
 
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
     endpoint/resource/id/nameOfTargetedAction
+
+Resource Method Declaration
+---------------------------
+In this chapter I will talk about how to declare methods in your resource. Basically there are three things you can do with a method; you can declare it's *arguments*, it's *access callback* and a *model*.
+
+### Mapping Request Parameters to Your Callback ###
+Your server probably isn't magic and thus it can't automatically figure what to do with a request what resources to access. This is where parameters come into the picture.
+
+A `@param` is a method annotation that defines what arguments your resource callback takes. A method can have several `@param`s and they need to be specified in the same order as the function arguments they map against.
+
+`@param` itself takes a few arguments:
+   *  type - the data type
+   *  name - name of the argument
+   *  source - where to get the data from, can be *path*, *param* or *data*.
+
+#### Sources ####
+##### Path #####
+*Path* maps URL segments to your callback. Here's an example:
+    /**
+     * Returns the node with the specified ID
+     *
+     * @param   int   $id   ["path", "0"]
+     * @return  object
+     */
+     public static function retrieve($id) {
+       ...
+     }
+
+The first URL segment *after* the resource is number zero, since the segments before that are given by your endpoint and resource.
+
+Assume this URL for the retrieve method defined in the example above (using *REST Server*):
+    GET http://domain.tld/endpoint/resource/5
+This will make services call YourResource::retrieve(5);
+
+##### Param #####
+*Param* maps a named GET parameter to your callback. Another example:
+    /**
+     * Returns the node with the specified ID
+     *
+     * @param   int   $id   ["param", "nid"]
+     * @return  object
+     */
+     public static function retrieve($id) {
+       ...
+     }
+
+Do achieve the same as in the *path*-example you would call:
+    GET http://domain.tld/endpoint/resource?nid=5
+
+##### Data #####
+The *data* option is used in conjuction with POST requests and is simply the entire POST-data array.
+
+For an update request your method may look like this:
+      /**
+       * Updates a node
+       *
+       * @param   int     $id   ["path", "0"]
+       * @param   object  $data ["data"]
+       * @return  object
+       */
+       public static function update($id, $data) {
+         // $id is the nid of the node to update
+         // $data is the POST-data to replace old data with
+       }
