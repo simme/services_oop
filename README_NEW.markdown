@@ -106,7 +106,7 @@ A `@param` is a method annotation that defines what arguments your resource call
 
 #### Sources ####
 ##### Path #####
-*Path* maps URL segments to your callback. Here's an example:
+*Path* maps URI segments to your callback. Here's an example:
     /**
      * Returns the node with the specified ID
      *
@@ -117,7 +117,7 @@ A `@param` is a method annotation that defines what arguments your resource call
        ...
      }
 
-The first URL segment *after* the resource is number zero, since the segments before that are given by your endpoint and resource.
+The first URI segment *after* the resource is number zero, since the segments before that are given by your endpoint and resource.
 
 Assume this URL for the retrieve method defined in the example above (using *REST Server*):
     GET http://domain.tld/endpoint/resource/5
