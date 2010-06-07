@@ -152,3 +152,14 @@ For an update request your method may look like this:
          // $id is the nid of the node to update
          // $data is the POST-data to replace old data with
        }
+
+### Controlling Access to Your Callback ###
+The `@Access` annotation let's you specify an access callback for your method. The annotation looks like this:
+    @Access(callback='callable', args={'arguments'}, appendArgs=true)
+
+   *  _callback_ is the name of a [callable](http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback). If you provide a static method called `access` in your class this would be `YourResourceClass::access`
+   *  _args_ a comma separated list of arguments enclosed in curly braces passed to your callback. Mostly used for passing in the context of the access check, *view*, *index* etc.
+   *  _appendArgs_ TODO
+
+### Models ###
+TODO
