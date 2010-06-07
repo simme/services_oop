@@ -161,5 +161,7 @@ The `@Access` annotation let's you specify an access callback for your method. T
    *  _args_ a comma separated list of arguments enclosed in curly braces passed to your callback. Mostly used for passing in the context of the access check, *view*, *index* etc.
    *  _appendArgs_ TODO
 
+Return *TRUE* in your access callback to allow access, *FALSE* to restrict access.
+
 ### Models ###
 TODO
