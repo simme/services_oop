@@ -8,11 +8,11 @@ Defining a resource
 -------------------
 Services_oop let's you create a resource as a class with describing comments instead of a gigantic associative array.
 
-If you are familiar with phpDoc or Doxygen it should be fairly ease to get started.
+If you are familiar with phpDoc or Doxygen it should be fairly easy to get started.
 
 How it works
 ------------
-By using reflection, services_oop can inspect your class and it comments by using the data it finds it constructs a resource for you.
+By using reflection, services_oop can inspect your class and its comments by using the data it finds it constructs a resource for you.
 
 You do not need to worry about performance, this stuff is cached pretty hard.
 
@@ -36,12 +36,12 @@ Resource Declaration
 The resource class itself can have three different annotations; *Relationship*, *Action* and *TargetedAction* (there's actually one more provided by REST Server. I'll talk about that one briefly below).
 
 ### Relationship ###
-Relationships let you specify a method that returns an *index* of related objects. Any easy to understand example could be getting all comments ID's for a specific node.
+Relationships let you specify a method that returns an *index* of related objects. Any easy to understand example could be getting all comments for a specific node.
 
 It's considered good practice to only return an index, not a list of complete objects.
 
 #### Defining a Relationship ####
-A relation ship is defined on the resource that means it should be defined in the doc comment for the class.
+A relationship is defined on the resource, that means it should be defined in the doc comment for the class.
 
 The definition looks like this
     @Relationship(name='a_name', controller='method')
@@ -56,7 +56,7 @@ If you're using the _REST server_ you would access this relationship by performi
 ### Action ###
 An (untargeted) action is a way of providing an API for performing other actions than *CRUD* and *index* on a resource.
 
-For example you could provide an API for deleting unpublished nodes or an API for close comments on nodes older then x days. It's up to you, really.
+For example you could provide an API for deleting unpublished nodes or an API for closing comments on nodes older then x days. It's up to you, really.
 
 This type of actions are performed directly on the resource type, not an individual resource.
 
@@ -157,7 +157,7 @@ For an update request your method may look like this:
 The `@Access` annotation let's you specify an access callback for your method. The annotation looks like this:
     @Access(callback='callable', args={'arguments'}, appendArgs=true)
 
-   *  _callback_ is the name of a [callable](http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback). If you provide a static method called `access` in your class this would be `YourResourceClass::access`
+   *   _callback_ is the name of a [callable](http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback). If you provide a static method called `access` in your class this would be `YourResourceClass::access`
    *  _args_ a comma separated list of arguments enclosed in curly braces passed to your callback. Mostly used for passing in the context of the access check, *view*, *index* etc.
    *  _appendArgs_ TODO
 
