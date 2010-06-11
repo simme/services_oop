@@ -69,12 +69,12 @@ Just like the relationship annotation, the action is defined on the resource its
 
 #### Accessing an Action ####
 If you're using the _REST server_ you would access this relationship by performing a GET call to the following URL:
-    endpoint/resource/nameOfRelationship
+    endpoint/resource/nameOfAction
 
 ### Targeted Actions ###
 The last of the resource wide annotations is the targeted action.
 
-Practical uses may include publishing a specific node or perhaps getting the name of a nodes author.
+Practical uses may include publishing a specific node or attaching a file to a node.
 
 #### Defining a Targeted Action ####
 Also defined on the class, written like this:
