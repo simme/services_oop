@@ -12,7 +12,7 @@ If you are familiar with phpDoc or Doxygen it should be fairly easy to get start
 
 How it works
 ------------
-By using reflection, services_oop can inspect your class and its comments by using the data it finds it constructs a resource for you.
+By using reflection, services_oop can inspect your class and its comments. By using the data it finds it constructs a resource for you.
 
 You do not need to worry about performance, this stuff is cached pretty hard.
 
@@ -33,7 +33,7 @@ Annotations are what makes services_oop work. An annotation is basically a prope
 
 Resource Declaration
 --------------------
-The resource class itself can have three different annotations; *Relationship*, *Action* and *TargetedAction* (there's actually one more provided by REST Server. I'll talk about that one briefly below).
+The resource class itself can have three different annotations; *Relationship*, *Action* and *TargetedAction*.
 
 ### Relationship ###
 Relationships let you specify a method that returns an *index* of related objects. Any easy to understand example could be getting all comments for a specific node.
@@ -160,9 +160,16 @@ The `@Access` annotation let's you specify an access callback for your method. T
 
    *   _callback_ is the name of a [callable](http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback). If you provide a static method called `access` in your class this would be `YourResourceClass::access`
    *  _args_ a comma separated list of arguments enclosed in curly braces passed to your callback. Mostly used for passing in the context of the access check, *view*, *index* etc.
-   *  _appendArgs_ wether or not to append the arguments array (array containing information about the API call) as an argument to your access callback function. Useful if you use *user_access* as your access callback.
+   *  _appendArgs_ wether or not to append the arguments array (array containing information about the API call) as an argument to your access callback function. If you want to use *user_access* as your access callback you need to set _appendArgs_ to *FALSE*, otherwise *user_access* will interpret the arguments array as the account object.
 
 Return *TRUE* in your access callback to allow access, *FALSE* to restrict access.
 
 ### Models ###
-TODO
+Models are basically a way of defining a custom response format. How you do that I won't go into detail about here. What I will tell you though is how you can tell Services that your resource supports specific a model.
+
+The annotation for a model looks like this:
+    @Model(class='nNameOfInterface', implementation='NameOfClass')
+
+Now, one could argue that this is oddly named and maybe it is. The *class* parameter is actually the name of the interface that your model implements. *Implementation* is the name of your class implementing that interface.
+
+If you know how to write a model you can probably figure this out!
