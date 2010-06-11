@@ -135,7 +135,7 @@ This will make services call YourResource::retrieve(5);
        ...
      }
 
-Do achieve the same as in the *path*-example you would call:
+To achieve the same as in the *path*-example you would call:
     GET http://domain.tld/endpoint/resource?nid=5
 
 ##### Data #####
@@ -160,7 +160,7 @@ The `@Access` annotation let's you specify an access callback for your method. T
 
    *   _callback_ is the name of a [callable](http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback). If you provide a static method called `access` in your class this would be `YourResourceClass::access`
    *  _args_ a comma separated list of arguments enclosed in curly braces passed to your callback. Mostly used for passing in the context of the access check, *view*, *index* etc.
-   *  _appendArgs_ TODO
+   *  _appendArgs_ wether or not to append the arguments array (array containing information about the API call) as an argument to your access callback function. Useful if you use *user_access* as your access callback.
 
 Return *TRUE* in your access callback to allow access, *FALSE* to restrict access.
 
